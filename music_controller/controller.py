@@ -79,10 +79,10 @@ class DualHandMusicController:
     def setup_instruments(self):
         """Initialize all instruments"""
         self.instruments = {
-            'piano': Piano(self.RATE, self.CHUNK),
             'Plucked String': PluckedString.guitar_preset(self.RATE, self.CHUNK),# .guitar_preset
             'theremin': Theremin(self.RATE, self.CHUNK),
-            'drums': Drums(self.RATE, self.CHUNK)
+            'drums': Drums(self.RATE, self.CHUNK),
+            'piano': Piano(self.RATE, self.CHUNK)
         }
         self.current_instrument = self.instruments['piano']
         self.current_mode = 'piano'

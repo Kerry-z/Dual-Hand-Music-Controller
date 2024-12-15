@@ -11,7 +11,7 @@ class DisplayManager:
     def __init__(self, controller):
         # Initialize Tkinter root window first
         self.root = tk.Tk()
-        self.root.title("Enhanced Music Controller")
+        self.root.title("Dual-Hand Music Controller")
         self.controller = controller  # Store reference to controller
         
         # Initialize other components after root window
@@ -53,7 +53,7 @@ class DisplayManager:
         self.video_label.pack(expand=True)
         
         # Instructions
-        instruction_text = ("Press 1:Piano 2:Plucked String 3:Theremin 4:Drums\n" + 
+        instruction_text = ("Press 1:Plucked String 2:Theremin 3:Drums 4:Piano\n" + 
                           "| Right hand: Pitch (Note) control |\n" + 
                            "| Left hand: x-axis for Volume control and y-axis for Pitch (Octave) control |")
         self.instruction_label = tk.Label(
@@ -319,10 +319,10 @@ class DisplayManager:
         
         # Define instruments with their display names and keyboard shortcuts
         instruments = [
-            ('Piano (1)', 'piano', '1'),
-            ('Plucked String (2)', 'Plucked String', '2'),
-            ('Theremin (3)', 'theremin', '3'),
-            ('Drums (4)', 'drums', '4')
+            ('Plucked String (1)', 'Plucked String', '1'),
+            ('Theremin (2)', 'theremin', '2'),
+            ('Drums (3)', 'drums', '3'),
+            ('Piano (4)', 'piano', '4')
         ]
         
         # Create button for each instrument
