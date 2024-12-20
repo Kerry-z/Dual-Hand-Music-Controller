@@ -2,7 +2,10 @@
 Flute Sound Synthesis Module (Under development)
 ========================================================================
 
-This module simulates flute sounds by combining harmonic content, vibrato effects, ADSR (Attack, Decay, Sustain, Release) envelopes, and breath noise. The synthesis is designed to mimic the natural characteristics of a flute.
+This module simulates flute sounds by combining harmonic content, vibrato effects, 
+ADSR (Attack, Decay, Sustain, Release) envelopes, and breath noise. 
+
+The synthesis is designed to mimic the natural characteristics of a flute.
 
 Key Features:
 -------------

@@ -2,41 +2,49 @@
 Digital Piano Simulation Module 
 ========================================================================
 
-This module implements a physical model of piano sound synthesis using digital waveguide techniques. The model simulates string vibration, hammer-string interaction, bridge coupling, and soundboard resonance to produce realistic piano tones.
+This module implements a piano sound synthesizer based on resonant filters to simulate the vibrations of piano strings. 
+By processing impulse signals through dynamically calculated filters, it reproduces the fundamental and
+harmonic frequencies characteristic of a piano. The model also includes a
+decay envelope to shape the natural damping behavior of piano tones.
 
 Key Features:
 -------------
-1. Hammer-String Interaction:
-   - Models the non-linear hammer force using displacement and velocity.
-   - Hammer compression and hysteresis add realism.
+1. **Fundamental Frequency Simulation:**
+   - Resonant filters generate the main tone corresponding to the input frequency.
 
-2. Digital Waveguide for Strings:
-   - Simulates left and right traveling waves with delay lines.
-   - String damping models energy dissipation over time.
+2. **Harmonic Components:**
+   - Adds up to three harmonics with decreasing amplitudes to enrich the timbre.
+   - Harmonic weights mimic the natural roll-off observed in real piano sounds.
 
-3. Bridge Coupling:
-   - Applies a low-pass filter to simulate string-bridge impedance.
+3. **Decay Envelope:**
+   - Applies an exponential envelope to simulate the energy dissipation in piano strings.
+   - Provides realistic sound fading for both soft and bright piano tones.
 
-4. Soundboard Resonance:
-   - Band-pass filtering models the resonance of the piano's soundboard.
+4. **Impulse Initialization:**
+   - Generates sound by processing an initial impulse signal, akin to a piano hammer strike.
 
-5. Sympathetic Resonance:
-   - Adds subtle randomness for realism.
-
-Limitations:
-------------
-I didn't use this part of code in the final visulization and sound generation, but I still want to keep it for future reference.
-The reason is that 
-
-1. High computational complexity due to multiple filters and delay lines.
-2. Not optimized for real-time response in interactive systems.
-3. Lacks polyphonic capabilities for multi-key playing.
-4. Unsuitable for video-based no-touch instruments due to the reliance on discrete frequency inputs.
+Key Parameters:
+---------------
+- `decay_time`: Controls how quickly the sound decays.
+- `harmonic_weights`: Relative amplitudes of the first three harmonics.
+- `extended_size`: Determines the buffer size for processing based on `decay_time` and `sample_rate`.
 
 Presets:
 --------
-1. Grand Piano: Brighter, more attack-heavy sound.
-2. Upright Piano: Warmer, softer tone.
+1. **Bright Piano Preset:**
+   - Faster decay for more percussive and lively tones.
+   - Method: `create_bright_piano`.
+
+2. **Soft Piano Preset:**
+   - Slower decay for mellow and sustained sounds.
+   - Method: `create_soft_piano`.
+
+Implementation Notes:
+---------------------
+- Resonant filter coefficients are recalculated dynamically for each input frequency.
+- Harmonic components are processed with independent filter states for stability.
+- Audio is generated in segments to balance memory usage and computational efficiency.
+
 
 Based on:
 --------

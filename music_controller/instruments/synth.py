@@ -1,8 +1,10 @@
 """
-Synthesizer Sound Generator with ADSR Envelope and Low-Pass Filtering
+Synthesizer Module with Multi-Oscillator, ADSR Envelope, and Filtering
 ========================================================================
 
-This module implements a simple synthesizer or a demo capable of generating a wide range of sounds using four basic waveforms, dual oscillators, an ADSR (Attack, Decay, Sustain, Release) envelope, and a low-pass filter. The design is trying to create basslines, leads, and other synthesized sounds.
+This module implements a simple synthesizer or a demo capable of generating a wide range of sounds using four basic waveforms, 
+dual oscillators, an ADSR (Attack, Decay, Sustain, Release) envelope, and a low-pass filter. 
+The design is trying to create basslines, leads, and other synthesized sounds.
 
 Mathematical Model:
 -----------------
@@ -25,11 +27,17 @@ Mathematical Model:
 
 Key Features:
 -------------
-- **Waveforms**: Supports sine, square, sawtooth, and triangle waveforms.
-- **Dual Oscillators**: Configurable oscillators with independent waveforms, volumes, and detuning.
-- **ADSR Envelope**: Smooth transitions between attack, decay, sustain, and release phases.
-- **Low-Pass Filter**: Adjustable cutoff frequency to shape the tone.
-- **Presets**: Provides pre-configured settings for bass and lead sounds.
+- Oscillator Parameters:
+  - `waveform`: Type of waveform (e.g., sine, square).
+  - `volume`: Relative amplitude of each oscillator.
+  - `detune`: Slight frequency offsets to create richer sounds.
+- ADSR Envelope Parameters:
+  - `attack`: Time to reach peak volume.
+  - `decay`: Time to settle to sustain level.
+  - `sustain`: Constant volume level after decay.
+  - `release`: Time to fade out after note release.
+- Filter Parameters:
+  - `filter_cutoff`: Determines the frequency above which harmonics are attenuated.
 
 Presets:
 -------

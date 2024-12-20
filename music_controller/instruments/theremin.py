@@ -42,6 +42,12 @@ Mathematical Model:
    The phase continuity between successive chunks is maintained using a smoothing factor.
    This avoids sudden phase jumps that could introduce audible discontinuities.
 
+6. Configurable Sound Duration:
+    The parameter `sound_duration` determines the duration of each sound burst. 
+    `extended_chunk_size` calculates the buffer size based on `sound_duration` and the sample rate. 
+    This allows for balancing real-time responsiveness and computational efficiency.
+
+
 Key Parameters:
 ---------------
 - vibrato_rate (Hz): Frequency of the vibrato modulation.
@@ -50,11 +56,13 @@ Key Parameters:
 - non_harmonic_factor: A multiplier for adding an inharmonic partial.
 - phase_smooth: A factor that controls how quickly the phase transitions to the new value.
 - envelope_fade_time: Duration of the fade-in/out to smooth each audio segment's edges.
+- sound_duration (seconds): Defines the duration of each sound burst.
+- extended_chunk_size: The number of audio samples per generated chunk, based on sound_duration.
+
 
 Presets:
 -------
-No preset configurations are provided, as all tones are dynamically generated
-based on input parameters.
+No preset configurations are provided, as all tones are dynamically generated based on input parameters.
 
 Inspired by:
 ------------

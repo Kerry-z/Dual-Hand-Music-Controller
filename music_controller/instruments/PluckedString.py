@@ -4,7 +4,14 @@ Plucked String Instrument Simulator using Karplus-Strong Algorithm
 
 This module implements a digital waveguide synthesis model for plucked string instruments
 using an enhanced version of the Karplus-Strong algorithm. The implementation simulates
-the physics of a vibrating string with additional parameters for realistic sound shaping.
+the physics of a vibrating string with additional parameters for realistic sound shaping. 
+These parameters include string tension, decay rate, and low-pass filtering to create a more natural and dynamic sound.
+
+Updates:
+--------
+- Unused parameters such as brightness, pluck position, body resonance, and noise amount
+  are preserved but not actively utilized in the current implementation. These may be
+  reintroduced or extended in future updates.
 
 Mathematical Model:
 -----------------
@@ -29,19 +36,16 @@ Mathematical Model:
 
 Key Parameters:
 -------------
-- string_decay (0.9-0.9999): Controls how quickly string vibrations die out
-- string_tension (0.1-0.5): Affects wave propagation and harmonic content
-- brightness: Controls high-frequency content in the output *temporarily discarded*
-- pluck_position: Simulates where the string is plucked (affects harmonic content) *temporarily discarded*
-- body_resonance: Models the instrument body's effect on the sound *temporarily discarded*
-- noise_amount: Adds subtle randomness for more realistic string behavior *temporarily discarded*
+- string_decay (0.9-0.9999): Determines how quickly the string vibrations decay
+- string_tension (0.1-0.5): Controls the stiffness and brightness of the string
+- brightness, pluck_position, body_resonance, and noise_amount: Preserved for potential future enhancements but not actively used in the current implementation
 
 Presets:
--------
-Includes configurations for different plucked string instruments:
-- Guitar: Lower tension, longer decay *Not accurately implemented*
-- Pipa: Medium tension, medium-long decay *Not accurately implemented*
-- Zither: Higher tension, shorter decay *Not accurately implemented*
+--------
+Ready-to-use configurations for simulating plucked string instruments:
+- Guitar: Emulates lower tension and longer decay *Not accurately implemented*
+- Pipa: Balanced tension with medium decay *Not accurately implemented*
+- Zither: Higher tension and shorter decay *Not accurately implemented*
 
 Based on:
 --------
