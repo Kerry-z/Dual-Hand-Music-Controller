@@ -137,4 +137,4 @@ dependencies:
       - six==1.16.0
       - sounddevice==0.5.1
       - threadpoolctl==3.5.0
-prefix: C:\Users\ZK695\.conda\envs\mediapipe_env
+
